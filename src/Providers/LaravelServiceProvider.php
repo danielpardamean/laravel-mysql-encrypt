@@ -1,9 +1,9 @@
 <?php
 
-namespace Chr15k\MysqlEncrypt\Providers;
+namespace DanielPardamean\MysqlEncrypt\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Chr15k\MysqlEncrypt\Traits\ValidatesEncrypted;
+use DanielPardamean\MysqlEncrypt\Traits\ValidatesEncrypted;
 
 class LaravelServiceProvider extends ServiceProvider
 {

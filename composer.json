@@ -1,9 +1,9 @@
 {
-    "name": "chr15k/laravel-mysql-encrypt",
-    "description": "Laravel 5.x | 6.x | 7.x | 8.x Database encryption mysql side",
+    "name": "danielpardamean/laravel-mysql-encrypt",
+    "description": "Laravel 9.x Database encryption mysql side",
     "keywords": [
         "laravel",
-        "chr15k",
+        "danielpardamean",
         "mysql",
         "encryption",
         "php",
@@ -12,33 +12,42 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Christopher Keller",
-            "email": "ctk8501@gmail.com"
+            "name": "Daniel pardamean",
+            "email": "danielpardamean14@gmail.com"
         }
     ],
     "require": {
-        "php": "^7.2.5",
-        "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
-        "illuminate/database": "^5.0|^6.0|^7.0|^8.0"
+        "php": "^8.0",
+        "illuminate/database": "^9.0",
+        "illuminate/support": "^9.0"
     },
     "autoload": {
         "psr-4": {
-            "Chr15k\\MysqlEncrypt\\": "src/"
+            "DanielPardamean\\MysqlEncrypt\\": "src/",
+            "DanielPardamean\\MysqlEncrypt\\Tests\\": "tests/"
         },
         "files": [
             "src/helpers.php"
         ]
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Chr15k\\MysqlEncrypt\\Providers\\LaravelServiceProvider"
+                "DanielPardamean\\MysqlEncrypt\\Providers\\LaravelServiceProvider"
             ]
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "orchestra/testbench": "^6.28",
+        "pestphp/pest": "^1.23",
+        "pestphp/pest-plugin-laravel": "^1.4"
+    }
 }

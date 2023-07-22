@@ -1,8 +1,8 @@
 <?php
 
-namespace Chr15k\MysqlEncrypt\Traits;
+namespace DanielPardamean\MysqlEncrypt\Traits;
 
-use Chr15k\MysqlEncrypt\Scopes\DecryptSelectScope;
+use DanielPardamean\MysqlEncrypt\Scopes\DecryptSelectScope;
 
 trait Encryptable
 {

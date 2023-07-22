@@ -1,6 +1,6 @@
 <?php
 
-namespace Chr15k\MysqlEncrypt\Traits;
+namespace DanielPardamean\MysqlEncrypt\Traits;
 
 use PDOException;
 use InvalidArgumentException;
