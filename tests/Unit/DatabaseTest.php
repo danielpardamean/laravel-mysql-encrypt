@@ -17,13 +17,13 @@ beforeEach(function () {
 
     Testing::create(['value' => 'testing string']);
     Testing::create(['value' => 'hello world']);
-
+    Testing::create(['value' => "it's me"]);
 });
 
 it('saves encrypted value to database', function () {
     $data = Testing::all()->toArray();
 
-    expect(count($data))->toBe(2);
+    expect(count($data))->toBe(3);
     expect($data[0]['value'])->toBe('testing string');
     expect($data[1]['value'])->toBe('hello world');
 });

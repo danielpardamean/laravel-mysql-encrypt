@@ -17,6 +17,8 @@ if (!function_exists('db_encrypt')) {
             return DB::raw("AES_ENCRYPT(NULL, '{$key}')");
         }
 
+        $value = addslashes($value);
+
         return DB::raw("AES_ENCRYPT('{$value}', '{$key}')");
     }
 }
