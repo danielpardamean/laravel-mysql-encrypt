@@ -1,8 +1,8 @@
 <?php
 
-namespace DanielPardamean\MysqlEncrypt\Traits;
+namespace TapanDerasari\MysqlEncrypt\Traits;
 
-use DanielPardamean\MysqlEncrypt\Scopes\DecryptSelectScope;
+use TapanDerasari\MysqlEncrypt\Scopes\DecryptSelectScope;
 
 trait Encryptable
 {
@@ -16,7 +16,7 @@ trait Encryptable
 
     /**
      * @param string $key
-     * @param mixed  $value
+     * @param mixed $value
      *
      * @return mixed
      */
@@ -37,7 +37,7 @@ trait Encryptable
         return $this->encryptable ?? [];
     }
 
-   /**
+    /**
      * where for encrypted columns
      *
      * @param $query

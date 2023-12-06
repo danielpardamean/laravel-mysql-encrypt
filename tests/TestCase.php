@@ -1,17 +1,14 @@
 <?php
 
-namespace DanielPardamean\MysqlEncrypt\Tests;
+namespace TapanDerasari\MysqlEncrypt\Tests;
 
-use DanielPardamean\MysqlEncrypt\Providers\LaravelServiceProvider;
-use DanielPardamean\MysqlEncrypt\Tests\Models\Demo;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\DB;
 use Orchestra\Testbench\TestCase as Orchestra;
+use TapanDerasari\MysqlEncrypt\Providers\LaravelServiceProvider;
+use TapanDerasari\MysqlEncrypt\Tests\Models\Demo;
 
 class TestCase extends Orchestra
 {
+
     protected function getPackageProviders($app)
     {
         return [

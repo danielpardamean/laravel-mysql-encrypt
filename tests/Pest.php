@@ -1,8 +1,8 @@
 <?php
 
-use DanielPardamean\MysqlEncrypt\Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use TapanDerasari\MysqlEncrypt\Tests\TestCase;
 
-uses(DatabaseMigrations::class)->in( __DIR__ );
-uses(TestCase::class)->in( __DIR__ );
+
+uses(DatabaseMigrations::class)->in(__DIR__);
+uses(TestCase::class)->in(__DIR__);
