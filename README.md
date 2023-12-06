@@ -4,46 +4,58 @@ Laravel/Lumen database encryption at database side using native AES_DECRYPT and 
 Automatically encrypt and decrypt fields in your Models.
 
 ## Install
+
 ### 1. Composer
+
 ```bash
-composer require danielpardamean/laravel-mysql-encrypt
+composer require tapanderasari/laravel-mysql-encrypt
 ```
 
 ### 2. Publish config (optional)
+
 `Laravel`
+
 ```bash
-php artisan vendor:publish --provider="DanielPardamean\MysqlEncrypt\Providers\LaravelServiceProvider"
+php artisan vendor:publish --provider="TapanDerasari\MysqlEncrypt\Providers\LaravelServiceProvider"
 ```
 
 `Lumen`
+
 ```bash
 mkdir -p config
-cp vendor/danielpardamean/laravel-mysql-encrypt/config/config.php config/mysql-encrypt.php
+cp vendor/tapanderasari/laravel-mysql-encrypt/config/config.php config/mysql-encrypt.php
 ```
 
 ### 3. Configure Provider
+
 `Laravel`
+
 - For Laravel 5.5 or later, the service provider is automatically loaded, skip this step.
 
 - For Laravel 5.4 or earlier, add the following to `config/app.php`:
+
 ```php
 'providers' => array(
-    DanielPardamean\\MysqlEncrypt\\Providers\\LaravelServiceProvider::class
+    TapanDerasari\\MysqlEncrypt\\Providers\\LaravelServiceProvider::class
 );
 ```
 
 `Lumen`
+
 - For Lumen, add the following to `bootstrap/app.php`:
+
 ```php
-$app->register(DanielPardamean\MysqlEncrypt\Providers\LumenServiceProvider::class);
+$app->register(TapanDerasari\MysqlEncrypt\Providers\LumenServiceProvider::class);
 ```
 
 ### 4. Set encryption key in `.env` file
+
 ```
 APP_AESENCRYPT_KEY=yourencryptionkey
 ```
 
 ## Update Models
+
 ```php
 <?php
 
@@ -66,17 +78,21 @@ class User extends Model
 ```
 
 ## Validators
+
 `unique_encrypted`
+
 ```
 unique_encrypted:<table>,<field(optional)>
 ```
 
 `exists_encrypted`
+
 ```
 exists_encrypted:<table>,<field(optional)>
 ```
 
 ## Scopes
+
 Custom Local scopes available:
 
 `whereEncrypted`
@@ -88,6 +104,7 @@ Custom Local scopes available:
 Global scope `DecryptSelectScope` automatically booted in models using `Encryptable` trait.
 
 ## Schema columns to support encrypted data
+
 ```php
 Schema::create('users', function (Blueprint $table) {
     $table->bigIncrements('id');
@@ -105,4 +122,6 @@ DB::statement('ALTER TABLE `users` ADD `telephone` VARBINARY(50)');
 ```
 
 ## License
-The MIT License (MIT). Please see [License File](https://github.com/danielpardamean/laravel-mysql-encrypt/blob/master/LICENSE) for more information.
+
+The MIT License (MIT). Please
+see [License File](https://github.com/danielpardamean/laravel-mysql-encrypt/blob/master/LICENSE) for more information.
