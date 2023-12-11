@@ -6,7 +6,7 @@ if (!function_exists('db_encrypt')) {
     /**
      * Encrypt value.
      *
-     * @param  mixed $value
+     * @param mixed $value
      * @return \Illuminate\Database\Query\Expression
      */
     function db_encrypt($value)
@@ -23,11 +23,12 @@ if (!function_exists('db_encrypt')) {
     }
 }
 
+
 if (!function_exists('db_decrypt')) {
     /**
      * Decrpyt value.
      *
-     * @param  mixed $column
+     * @param mixed $column
      * @return \Illuminate\Database\Query\Expression
      */
     function db_decrypt($column)
@@ -43,9 +44,9 @@ if (!function_exists('db_decrypt_string')) {
     /**
      * Decrpyt value.
      *
-     * @param  string  $column
-     * @param  string  $value
-     * @param  string  $operator
+     * @param string $column
+     * @param string $value
+     * @param string $operator
      * @return string
      */
     function db_decrypt_string($column, $value, $operator = 'LIKE')

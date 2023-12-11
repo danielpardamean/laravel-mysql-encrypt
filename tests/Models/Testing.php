@@ -1,9 +1,10 @@
 <?php
 
-namespace DanielPardamean\MysqlEncrypt\Tests\Models;
+namespace TapanDerasari\MysqlEncrypt\Tests\Models;
 
-use DanielPardamean\MysqlEncrypt\Traits\Encryptable;
 use Illuminate\Database\Eloquent\Model;
+use TapanDerasari\MysqlEncrypt\Traits\Encryptable;
+
 
 class Testing extends Model
 {

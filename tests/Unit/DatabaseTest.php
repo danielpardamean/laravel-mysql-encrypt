@@ -1,8 +1,9 @@
 <?php
 
-use DanielPardamean\MysqlEncrypt\Tests\Models\Testing;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
+use TapanDerasari\MysqlEncrypt\Tests\Models\Testing;
+
 
 beforeEach(function () {
     $schema = $this->app['db']->connection()->getSchemaBuilder();

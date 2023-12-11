@@ -1,16 +1,17 @@
 <?php
 
-namespace DanielPardamean\MysqlEncrypt\Traits;
+namespace TapanDerasari\MysqlEncrypt\Traits;
 
-use PDOException;
-use InvalidArgumentException;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
+use InvalidArgumentException;
+use PDOException;
+
 
 trait ValidatesEncrypted
 {
- /**
+    /**
      * Validators.
      *
      * @return void
@@ -26,7 +27,7 @@ trait ValidatesEncrypted
             $field = isset($parameters[1]) ? $parameters[1] : $attribute;
             $ignore = isset($parameters[2]) ? $parameters[2] : null;
 
-            $items = DB::select("SELECT count(*) as aggregate FROM `".$parameters[0]."` WHERE AES_DECRYPT(`".$field."`, '".config("app.key")."') LIKE '".$value."' COLLATE utf8mb4_general_ci".($ignore ? " AND id != ".$ignore : ''));
+            $items = DB::select("SELECT count(*) as aggregate FROM `" . $parameters[0] . "` WHERE AES_DECRYPT(`" . $field . "`, '" . config("app.key") . "') LIKE '" . $value . "' COLLATE utf8mb4_general_ci" . ($ignore ? " AND id != " . $ignore : ''));
 
             return $items[0]->aggregate == 0;
         });
@@ -39,7 +40,7 @@ trait ValidatesEncrypted
 
             $field = isset($parameters[1]) ? $parameters[1] : $attribute;
 
-            $items = DB::select("SELECT count(*) as aggregate FROM `".$parameters[0]."` WHERE AES_DECRYPT(`".$field."`, '".config("app.key")."') LIKE '".$value."' COLLATE utf8mb4_general_ci");
+            $items = DB::select("SELECT count(*) as aggregate FROM `" . $parameters[0] . "` WHERE AES_DECRYPT(`" . $field . "`, '" . config("app.key") . "') LIKE '" . $value . "' COLLATE utf8mb4_general_ci");
 
             return $items[0]->aggregate > 0;
         });
@@ -48,9 +49,9 @@ trait ValidatesEncrypted
     /**
      * Require a certain number of parameters to be present.
      *
-     * @param  int    $count
-     * @param  array  $parameters
-     * @param  string $rule
+     * @param int $count
+     * @param array $parameters
+     * @param string $rule
      * @return void
      *
      * @throws \InvalidArgumentException
@@ -65,14 +66,14 @@ trait ValidatesEncrypted
     /**
      * The table must exist.
      *
-     * @param  string  $table
+     * @param string $table
      * @return void
      *
      * @throws PDOException
      */
     public function requireTableExists($table)
     {
-        if (! Schema::hasTable($table)) {
+        if (!Schema::hasTable($table)) {
             throw new PDOException("Table $table not found.");
         }
     }
