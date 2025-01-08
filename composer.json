@@ -1,6 +1,6 @@
 {
     "name": "danielpardamean/laravel-mysql-encrypt",
-    "description": "Laravel 9.x Database encryption mysql side",
+    "description": "Laravel 10.x Database encryption mysql side",
     "keywords": [
         "laravel",
         "danielpardamean",
@@ -17,9 +17,9 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "illuminate/database": "^9.0",
-        "illuminate/support": "^9.0"
+        "php": "^8.1",
+        "illuminate/database": "^10.0",
+        "illuminate/support": "^10.0"
     },
     "autoload": {
         "psr-4": {
@@ -46,9 +46,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "orchestra/testbench": "^6.28",
-        "pestphp/pest": "^1.23",
-        "pestphp/pest-plugin-laravel": "^1.4"
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0"
     },
     "scripts": {
         "test": "./vendor/bin/pest"
